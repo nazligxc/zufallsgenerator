@@ -1,19 +1,25 @@
-<h2>Fika</h2>
-<h1>Zufallsgenerator</h1>
-<p>
-  Dieser Zufallsgenerator ist dafür da, um den nächsten Fika Speaker 
-  auszuwählen - natürlich ganz zufällig und fair. Klick einfach auf 
-  den Button unten und schau was passiert.
-</p>
-<h3>Nächste Speaker</h3>
-<div *ngIf="newlyChosen != null; else placeholder">
-  <h2>{{ newlyChosen.firstName }} {{ newlyChosen.lastName }}</h2>
-  <img>
-</div>
-<ng-template #placeholder>
-  <div>
-    <h2>{{ placeholderName }}</h2>
-    <img src="">
+<div class="outer">
+  <div class="middle">
+    <div class="inner">
+      <h2>Fika</h2>
+      <h1>Zufallsgenerator</h1>
+      <p>
+        Dieser Zufallsgenerator ist dafür da, um den nächsten Fika Speaker 
+        auszuwählen - natürlich ganz zufällig und fair. Klick einfach auf 
+        den Button unten und schau was passiert.
+      </p>
+      <h3>Nächste Speaker</h3>
+      <div class="chosen" *ngIf="newlyChosen != null; else placeholder">
+        <h2 class="name">{{ newlyChosen.firstName }}<br>{{ newlyChosen.lastName }}</h2>
+        <img src="{{ newlyChosen.imagePath }}">
+      </div>
+      <ng-template #placeholder>
+        <div class="chosen">
+          <h2 class="name">{{ placeholderName }}</h2>
+          <img src="">
+        </div>
+      </ng-template>
+      <button type="button" (click)="generateName()">Generieren</button>
+    </div>
   </div>
-</ng-template>
-<button (click)="generateName()">Generieren</button>
+</div>

@@ -1,0 +1,47 @@
+.outer {
+    display: table;
+    position: absolute;
+    top: 0;
+    left: 5%;
+    right: 5%;
+    height: 100%;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  
+.inner {
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 400px; */
+    /* Whatever width you want */
+}
+
+h1 {
+    margin-top: 0px;
+}
+
+h2 {
+    margin-bottom: 0px;
+    width: 200px;
+}
+
+.chosen {
+    display: flex;
+    flex-direction: row;
+    flex: 1 50px;
+}
+
+img {
+    height: 150px;
+}
+
+button {
+    margin: 25px 25px 0px 0px;
+    padding: 12px 28px;
+    border-radius: 12px;
+    font-size: 1rem;
+    width: 100%;
+}
