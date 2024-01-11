@@ -6,8 +6,14 @@
   den Button unten und schau was passiert.
 </p>
 <h3>Nächste Speaker</h3>
-<div *ngIf="newlyChosen != null">
+<div *ngIf="newlyChosen != null; else placeholder">
   <h2>{{ newlyChosen.firstName }} {{ newlyChosen.lastName }}</h2>
   <img>
 </div>
-<button (click)="onGenerate()">Generieren</button>
+<ng-template #placeholder>
+  <div>
+    <h2>{{ placeholderName }}</h2>
+    <img src="">
+  </div>
+</ng-template>
+<button (click)="generateName()">Generieren</button>

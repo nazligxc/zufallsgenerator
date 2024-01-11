@@ -18,5 +18,14 @@ export const colleaguesList: Colleagues[] = [
     { id: 14, firstName: 'Philipp', lastName: 'Andrikopoulos'},
     { id: 15, firstName: 'Richard', lastName: 'Montbrun'},
     { id: 16, firstName: 'Steffen', lastName: 'Rau'},
-    { id: 17, firstName: 'Thomas', lastName: 'Renner'}
+    { id: 17, firstName: 'Thomas', lastName: 'Renner'},
+    { id: 18, firstName: 'Philipp', lastName: 'Andrikopoulos'},
+    { id: 19, firstName: 'Philipp', lastName: 'Andrikopoulos'},
+    { id: 20, firstName: 'Philipp', lastName: 'Andrikopoulos'},
+    { id: 21, firstName: 'Philipp', lastName: 'Andrikopoulos'},
+    { id: 22, firstName: 'Philipp', lastName: 'Andrikopoulos'},
+    { id: 23, firstName: 'Philipp', lastName: 'Andrikopoulos'},
+    { id: 24, firstName: 'Philipp', lastName: 'Andrikopoulos'},
+    { id: 25, firstName: 'Philipp', lastName: 'Andrikopoulos'},
+    { id: 26, firstName: 'Philipp', lastName: 'Andrikopoulos'}
 ]

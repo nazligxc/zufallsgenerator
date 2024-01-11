@@ -8,11 +8,12 @@ import { colleaguesList } from './colleagues/colleagues';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  placeholderName: string = 'Max Mustermann';
   randomColleague: number | undefined;
   lastChosenColleagues: Colleagues[] = [];
   newlyChosen: any;
   
-  onGenerate() {
+  generateName() {
     this.randomColleague = Math.floor(Math.random() * colleaguesList.length);
     this.lastChosenColleagues.push(colleaguesList[this.randomColleague]);
     this.newlyChosen = this.lastChosenColleagues[this.lastChosenColleagues.length-1];
