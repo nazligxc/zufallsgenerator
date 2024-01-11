@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Mitarbeiter } from './mitarbeiter';
-import { mitarbeiterListe } from './colleagues/colleagues';
+import { Colleagues } from './colleagues';
+import { colleaguesList } from './colleagues/colleagues';
 
 @Component({
   selector: 'app-root',
@@ -8,14 +8,14 @@ import { mitarbeiterListe } from './colleagues/colleagues';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  random: number | undefined;
-  chosenHistory: Mitarbeiter[] = [];
-  newChosen: any;
+  randomColleague: number | undefined;
+  lastChosenColleagues: Colleagues[] = [];
+  newlyChosen: any;
   
   onGenerate() {
-    this.random = Math.floor(Math.random() * mitarbeiterListe.length);
-    this.chosenHistory.push(mitarbeiterListe[this.random]);
-    this.newChosen = this.chosenHistory[this.chosenHistory.length-1];
+    this.randomColleague = Math.floor(Math.random() * colleaguesList.length);
+    this.lastChosenColleagues.push(colleaguesList[this.randomColleague]);
+    this.newlyChosen = this.lastChosenColleagues[this.lastChosenColleagues.length-1];
   }
 
 }
