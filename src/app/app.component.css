@@ -46,9 +46,13 @@ button {
     width: 100%;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 576px) {
     .outer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         text-align: center;
+        min-height: 100vh;
     }
 
     h2 {

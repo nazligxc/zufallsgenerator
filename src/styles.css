@@ -16,4 +16,11 @@
 app-root {
     font-family: 'Manrope', sans-serif;
     text-transform: uppercase;
+    font-size: small;
+}
+
+@media only screen and (min-width: 576px) {
+    app-root {
+        font-size: larger;
+    }
 }
