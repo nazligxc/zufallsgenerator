@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Colleagues } from './colleagues';
-import { colleaguesList } from './colleagues/colleagues';
+import { ColleaguesClass } from './colleagues/colleagues';
 
 @Component({
   selector: 'app-root',
@@ -10,13 +10,28 @@ import { colleaguesList } from './colleagues/colleagues';
 export class AppComponent {
   placeholderName: string = 'Max Mustermann';
   randomColleague: number | undefined;
-  lastChosenColleagues: Colleagues[] = [];
+  lastChosenColleagues: Storage | undefined;
   newlyChosen: any;
+
+  constructor(private colleaguesClass: ColleaguesClass) {}
+
   
   generateName() {
-    this.randomColleague = Math.floor(Math.random() * colleaguesList.length);
-    this.lastChosenColleagues.push(colleaguesList[this.randomColleague]);
-    this.newlyChosen = this.lastChosenColleagues[this.lastChosenColleagues.length-1];
+    this.randomColleague = Math.floor(Math.random() * this.colleaguesClass.colleaguesList.length);
+    this.newlyChosen = this.colleaguesClass.colleaguesList[this.randomColleague];
+    localStorage.setItem(this.newlyChosen.id, this.newlyChosen.firstName);
+
+    this.lastChosenColleagues = localStorage;
+    // for(let i: number in localStorage) {
+    //   localStorage.getItem(i);
+    // }
+    console.log(this.lastChosenColleagues);
   }
 
+
 }
+
+
+
+
+
