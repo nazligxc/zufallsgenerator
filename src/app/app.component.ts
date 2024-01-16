@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Colleagues } from './colleagues';
 import { ColleaguesClass } from './colleagues/colleagues';
+import { RandomService } from './random';
+import { StorageService } from './storage';
 
 @Component({
   selector: 'app-root',
@@ -13,19 +14,18 @@ export class AppComponent {
   lastChosenColleagues: Storage | undefined;
   newlyChosen: any;
 
-  constructor(private colleaguesClass: ColleaguesClass) {}
+  private colleaguesClass: ColleaguesClass = new ColleaguesClass(new RandomService(), new StorageService());
 
-  
   generateName() {
-    this.randomColleague = Math.floor(Math.random() * this.colleaguesClass.colleaguesList.length);
-    this.newlyChosen = this.colleaguesClass.colleaguesList[this.randomColleague];
+    this.newlyChosen = this.colleaguesClass.getColleague();
     localStorage.setItem(this.newlyChosen.id, this.newlyChosen.firstName);
 
     this.lastChosenColleagues = localStorage;
     // for(let i: number in localStorage) {
     //   localStorage.getItem(i);
     // }
-    console.log(this.lastChosenColleagues);
+    console.log(this.newlyChosen.id);
+    // console.log(this.lastChosenColleagues);
   }
 
 

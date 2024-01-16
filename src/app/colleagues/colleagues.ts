@@ -4,7 +4,8 @@ import { RandomService } from '../random';
 import { StorageService } from '../storage';
 
 @Injectable()
-export class ColleaguesClass {
+export class ColleaguesClass
+ {
     colleaguesList: Colleagues[] = [
         { id: 0, firstName: 'Armin', lastName: 'Otterstätter', imagePath: '../assets/images/mitarbeiter15.jpg'},
         { id: 1, firstName: 'Christian', lastName: 'Löwe', imagePath: '../assets/images/mitarbeiter5.jpg'},
@@ -30,14 +31,12 @@ export class ColleaguesClass {
         private storageService: StorageService) {}
 
 
-    private colleaguesMapping : number[] = this.mapping_init(new Array<number>(14, 14, 14, 14));
+    private colleaguesMapping: number[] = this.mappingColleagues(new Array<number>(14, 14, 14, 14));
 
-    private mapping_init(id_weighted: number[]) : number[]
-    {
-        let result: Array<number> = id_weighted;
+    private mappingColleagues(weightedId: number[]) : number[] {
+        let result: Array<number> = weightedId;
 
-        for (let i = 0; i <= this.colleaguesList.length-1; ++i)
-        {
+        for (let i = 0; i <= this.colleaguesList.length-1; ++i) {
             result.push(i); 
         }
 
@@ -45,17 +44,17 @@ export class ColleaguesClass {
     }
 
     getColleague() {
-        var colleague_id: number = -1;
-        var last_colleague_id: number = this.storageService.getLastColleagueID();
+        var colleagueId: number = -1;
+        var lastColleagueId: number = this.storageService.getLastColleagueID();
 
         do {
-            var mapping_id: number = this.randomService.getRandom(this.colleaguesMapping.length-1);
-            colleague_id = this.colleaguesMapping[mapping_id];
-        } while(last_colleague_id === colleague_id)
+            var mappingId: number = this.randomService.getRandom(this.colleaguesMapping.length-1);
+            colleagueId = this.colleaguesMapping[mappingId];
+        } while(lastColleagueId === colleagueId)
         
-        this.storageService.setLastColleague(colleague_id);
+        this.storageService.setLastColleague(colleagueId);
 
-        return this.colleaguesList[colleague_id];
+        return this.colleaguesList[colleagueId];
     }
 
 
