@@ -33,7 +33,7 @@ export class ColleaguesClass
 
     private colleaguesMapping: number[] = this.mappingColleagues(new Array<number>(14, 14, 14, 14));
 
-    private mappingColleagues(weightedId: number[]) : number[] {
+    mappingColleagues(weightedId: number[]) : number[] {
         let result: Array<number> = weightedId;
 
         for (let i = 0; i <= this.colleaguesList.length-1; ++i) {
